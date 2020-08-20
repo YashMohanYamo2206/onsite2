@@ -91,26 +91,6 @@ public class customView extends View {
                     width = Math.abs((rectF.right - rectF.left));
                     height = Math.abs((rectF.bottom - rectF.top));
                     postInvalidate();
-                } else if (side == 1) {
-                    rectF.top = event.getY();
-                    width = Math.abs((rectF.right - rectF.left));
-                    height = Math.abs((rectF.bottom - rectF.top));
-                    postInvalidate();
-                } else if (side == 2) {
-                    rectF.left = event.getX();
-                    width = Math.abs((rectF.right - rectF.left));
-                    height = Math.abs((rectF.bottom - rectF.top));
-                    postInvalidate();
-                } else if (side == 3) {
-                    rectF.bottom = event.getY();
-                    width = Math.abs((rectF.right - rectF.left));
-                    height = Math.abs((rectF.bottom - rectF.top));
-                    postInvalidate();
-                } else if (side == 4) {
-                    rectF.right = event.getX();
-                    width = Math.abs((rectF.right - rectF.left));
-                    height = Math.abs((rectF.bottom - rectF.top));
-                    postInvalidate();
                 }
                 return true;
             case MotionEvent.ACTION_DOWN:
@@ -130,18 +110,6 @@ public class customView extends View {
                     return true;
                 } else if (x > rectF.left && x < rectF.left + 150f && y > rectF.bottom - 150f && y < rectF.bottom) {
                     corner = 4;
-                    return true;
-                } else if (x > rectF.left + 150f && x < rectF.right - 150f && y > rectF.top && y < rectF.top + 150f) {
-                    side = 1;
-                    return true;
-                } else if (x > rectF.right - 150f && x < rectF.right && y > rectF.top + 150f && y < rectF.bottom - 150f) {
-                    side = 2;
-                    return true;
-                } else if (x > rectF.left + 150f && x < rectF.right - 150f && y > rectF.bottom - 150f && y < rectF.bottom) {
-                    side = 3;
-                    return true;
-                } else if (x > rectF.left && x < rectF.left + 150f && y > rectF.top + 150f && y < rectF.bottom - 150f) {
-                    side = 4;
                     return true;
                 }
         }
